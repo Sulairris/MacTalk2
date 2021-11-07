@@ -15,7 +15,7 @@ while True:
         while True:
             os.system('clear')
             print('Type and I will speak\nPress return with an empty line to quit\n\n')
-            type = raw_input('?')
+            type = input('?')
             # will break out of loop if the user enters nothing
             if len(type) == 0:
                 break
@@ -26,7 +26,7 @@ while True:
         while True:
             clear()
             print('Please input file name to speak\nType list to list files\npress enter to exit\n\n')
-            readfile = raw_input('?')
+            readfile = input('?')
             if readfile == 'list':
                 os.system('ls | say -i -v ' + settings[1])
             if len(readfile) == 0:
@@ -53,7 +53,7 @@ while True:
             print('T: Test preferences')
             print('E: Exit\n\n')
             # logic for changing settings
-            set = raw_input('?')
+            set = input('?')
             if set == '1':
                 settings[1] = 'alex'
             if set == '2':
