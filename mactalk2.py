@@ -2,7 +2,7 @@ import os
 import sys
 # program settings [0] = highlighting, [1] = voice
 settings = ['-i','alex']
-# this is so i dont have to type os.system('clear') all the time
+# this is so I dont have to type os.system('clear') all the time
 def clear():
     os.system('clear')
 while True:
