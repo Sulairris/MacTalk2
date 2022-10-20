@@ -33,7 +33,7 @@ while True:
                 break
             else:
                 os.system('say ' + settings[0] + ' -v ' + settings[1] + ' ' + '-f ' + readfile)
-    # Preferences
+    # preferences
     if startchoice == 'p':
         while True:
             clear()
