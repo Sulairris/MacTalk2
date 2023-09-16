@@ -1,7 +1,7 @@
 import os
 import sys
 # program settings [0] = highlighting, [1] = voice
-settings = ['-i','alex']
+settings = ['-i']
 # this is so I dont have to type os.system('clear') all the time
 def clear():
     os.system('clear')
@@ -9,7 +9,7 @@ while True:
     clear()
     # main menu
     print('S: Speak\nR: Read File\nP: Preferences\nQ: Quit\n\n')
-    startchoice = raw_input('?')
+    startchoice = input('?')
     # code for speaking
     if startchoice == 's':
         while True:
@@ -21,30 +21,27 @@ while True:
                 break
             else:
                 # passes users data to the say program with flags set in Preferences
-                os.system('say ' + settings[0] + ' -v ' + settings[1] + ' "' + type + '"')
+                os.system('say ' + settings[0] + ' "' + type + '"')
     if startchoice == 'r':
         while True:
             clear()
             print('Please input file name to speak\nType list to list files\npress enter to exit\n\n')
             readfile = input('?')
             if readfile == 'list':
-                os.system('ls | say -i -v ' + settings[1])
+                os.system('ls | say -i')
             if len(readfile) == 0:
                 break
             else:
-                os.system('say ' + settings[0] + ' -v ' + settings[1] + ' ' + '-f ' + readfile)
+                os.system('say ' + settings[0] + ' ' + '-f ' + readfile)
     # preferences
     if startchoice == 'p':
         while True:
             clear()
             # prints what settings can be changed
             print('--PREFERENCES--\n')
-            print('-VOICE-\n')
-            print('1: Alex(Defult)\n2: Yuri\n')
             print('-HIGHLIGHTING-\n')
             print('H: On\nNH: Off\n')
             print('-CURRENT PREFERENCES-\n')
-            print('Voice: ' + settings[1])
             # determines the state of the highlighting setting and prints the state in a user friendly way
             if settings[0] == '-i':
                 print('Highlighting: On\n')
@@ -54,16 +51,12 @@ while True:
             print('E: Exit\n\n')
             # logic for changing settings
             set = input('?')
-            if set == '1':
-                settings[1] = 'alex'
-            if set == '2':
-                settings[1] = 'yuri'
             if set == 'h':
                 settings[0] = '-i'
             if set == 'nh':
                 settings[0] = ''
             if set == 't':
-                os.system('say ' + settings[0] + ' -v ' + settings[1] + ' "Hello my name is ' + settings[1] + ', and this is a test"')
+                os.system('say ' + settings[0] + ' "Hello this is a test"')
             if set == 'e':
                 break
     # quits program
