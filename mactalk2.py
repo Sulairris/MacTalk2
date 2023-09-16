@@ -39,6 +39,8 @@ while True:
             clear()
             # prints what settings can be changed
             print('--PREFERENCES--\n')
+            print('-VOICE-\n')
+            print('Voice setting have moved system setting\n')
             print('-HIGHLIGHTING-\n')
             print('H: On\nNH: Off\n')
             print('-CURRENT PREFERENCES-\n')
